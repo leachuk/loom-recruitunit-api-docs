@@ -1,11 +1,7 @@
 
-# Client Retention API
-The Client Retention Api provides marketing services to:
- * Add user to auto email service
- * Update existing user timestamp for auto email service
- * Remove user from auto email service
+# RecruitUnit API
+The RecruitUnit API provides secured endpoints to the Loom content services 
 
-<!-- include(services/adduser.md) -->
-<!-- include(services/updateuser.md) -->
-<!-- include(services/deleteuser.md) -->
+<!-- include(services/users.md) -->
+
 
