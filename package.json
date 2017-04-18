@@ -1,0 +1,24 @@
+{
+  "name": "client-retention-api-docs",
+  "version": "1.0.0",
+  "description": "Documentation for Client Retention API",
+  "main": "index.js",
+  "scripts": {
+    "docs": "gulp docs",
+    "build": "gulp buildLambda"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://stewart-leach@bitbucket.org/origin-digital/client-retention-api-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/origin-digital/client-retention-api-docs#readme",
+  "dependencies": {
+    "aglio": "^2.3.0",
+    "gulp": "^3.9.1",
+    "gulp-aglio": "0.0.10",
+    "gulp-zip": "^4.0.0",
+    "run-sequence": "^1.2.2"
+  }
+}
