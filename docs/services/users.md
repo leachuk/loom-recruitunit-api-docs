@@ -1,23 +1,27 @@
-    
-# Client Retention Group
-Group of all resources for auto marketing email service
+<!-- Group is a keyword to define a seperate section in the parsed docs -->     
+# Group Users
+Group of all resources for managing users
 
-## Add User [/v1/client-retention]
+## Create New User [/api/users/signup{?modelId}]
 Adds a new user to the client retention database for email service. The email address must not have previously been added. 
 
 ### Create [POST]
 
++ Parameters
+
+  + modelId: `server/services/recruitunit/users/recruitUnitUserService.controller.js` (required, string) - The id for the specific application
+
 + Request with body (application/json)
 
-    Data about user being added. With following attributes are:
-
-    + `userEmail` email address of the user
-    + `userName` name of the user, ideally just the first name
-    + `planType` plan type the user select while submitting the sales form. Allowed values `origin maximiser`, `origin saver` or `default`. Any other values are transformed to `default`.
-    + `userState` selected from users address.
+    Data parameters required to create a new user.
     
+    ## Notes
+    Details of body json parameters:
+    
+    * `key` (required, string) - parameter in body json. A random string provided by the server for authentication.
+        
   + Body
-    { "userEmail": "john.smith@example.com", "userName": "john", "planType": "maximiser", "userState" : "VIC" }
+    { "email": "john.smith@example.com", "displayName": "john", "jobRole": "developer", "password" : "12345678", "key" : "123456789" }
 
 + Response 200 (application/vnd.api+json; charset=utf-8)
   + Body
