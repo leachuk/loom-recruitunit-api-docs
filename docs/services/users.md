@@ -13,12 +13,16 @@ Adds a new user to the client retention database for email service. The email ad
 
 + Request with body (application/json)
 
-    Data parameters required to create a new user.
+    Data parameters **required** to create a new user.
     
     ## Notes
     Details of body json parameters:
     
-    * `key` (required, string) - parameter in body json. A random string provided by the server for authentication.
+    * `email` (required, string) - Your email address for future sign in.
+    * `displayName` (required, string) - Your full name.
+    * `jobRole` (required, string) - Allowed values are [`developer`, `recruiter`]
+    * `password` (required, string) - Your password for future sign in.
+    * `key` (required, string) - A random string provided by the server for authentication.
         
   + Body
     { "email": "john.smith@example.com", "displayName": "john", "jobRole": "developer", "password" : "12345678", "key" : "123456789" }
