@@ -27,14 +27,27 @@ Adds a new user to the client retention database for email service. The email ad
   + Body
     { "email": "john.smith@example.com", "displayName": "john", "jobRole": "developer", "password" : "12345678", "key" : "123456789" }
 
-+ Response 200 (application/vnd.api+json; charset=utf-8)
++ Response 200 (application/json)
   + Body
-    success
+    {
+      "data": {
+        "createUser": {
+          "success": true
+        }
+      },
+      "success": true
+    }
 
-+ Response 400 (application/vnd.api+json; charset=utf-8)
++ Response 401 (application/json)
   + Body
-    failure or message about the input that was rejected.
+    {
+      "success": false,
+      "data": {
+        "success": false,
+        "message": "missing or invalid application key"
+      }
+    }
     
-+ Response 500 (application/vnd.api+json; charset=utf-8)
++ Response 500 (application/json)
   + Body
     Problem servicing the request, try again.
