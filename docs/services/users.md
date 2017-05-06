@@ -53,9 +53,9 @@ Adds a new user to the client retention database for email service. The email ad
     Invalid request parameters
 
 ## Sign In User [/api/recruitunit/users/signin]
-Sign in using a users previously created credentials. Returns a JWT token which is to be sent in subsequent requests for authentication. 
+Sign in using previously created credentials. Returns a JWT token which is to be managed by the application and sent in subsequent requests for authentication. 
 
-### Create [POST]
+### Sign In [POST]
 
 + Request with body (application/json)
 
@@ -64,11 +64,11 @@ Sign in using a users previously created credentials. Returns a JWT token which 
     ## Notes
     Details of body json parameters:
     
-    * `email` (required, string) - Your email address.
+    * `username` (required, string) - Your email address (I know! Why not call this parameter email?).
     * `password` (required, string) - Your password.
         
   + Body
-    { "email": "john.smith@example.com", "password" : "12345678" }
+    { "username": "john.smith@example.com", "password" : "12345678" }
 
 + Response 200 (application/json)
   + Body
@@ -87,3 +87,4 @@ Sign in using a users previously created credentials. Returns a JWT token which 
 + Response 400 (application/json)
   + Body
     Invalid request parameters
+    
