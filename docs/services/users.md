@@ -48,6 +48,42 @@ Adds a new user to the client retention database for email service. The email ad
       }
     }
     
-+ Response 500 (application/json)
++ Response 400 (application/json)
   + Body
-    Problem servicing the request, try again.
+    Invalid request parameters
+
+## Sign In User [/api/recruitunit/users/signin]
+Sign in using a users previously created credentials
+
+### Create [POST]
+
++ Request with body (application/json)
+
+    Data parameters **required** to sign in a user.
+    
+    ## Notes
+    Details of body json parameters:
+    
+    * `email` (required, string) - Your email address.
+    * `password` (required, string) - Your password.
+        
+  + Body
+    { "email": "john.smith@example.com", "password" : "12345678" }
+
++ Response 200 (application/json)
+  + Body
+    {
+      "success": true,
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImpvaG4uc21pdGhAZXhhbXBsZS5jb20iLCJjb29raWUiOiJBdXRoU2Vzc2lvbj1hbTlvYmk1emJXbDBhRUJsZUdGdGNHeGxMbU52YlRvMU9UQkVNelExUVRxUFBXZWdNN00xRDR5QmYzZTZUNVppV0hDckZ3OyBWZXJzaW9uPTE7IFBhdGg9LzsgSHR0cE9ubHkiLCJvayI6dHJ1ZSwicm9sZXMiOlsiZWRpdG9yIiwiZGV2ZWxvcGVyIl0sImlzQ29tcGFyaXNvbkZvcm1FbmFibGVkIjpmYWxzZSwidXNlckd1aWQiOiJySkFpd2tzMWIiLCJpcCI6Ijo6MSIsImlhdCI6MTQ5NDA1MDc1NywiZXhwIjoxNDk2NjQyNzU3fQ.v8YBCBTZtMCMYCYzRVkS8ld0UYxgOW_hTge1ppjaHcA"
+    }
+
++ Response 401 (application/json)
+  + Body
+    {
+      "success": false,
+      "message": "Name or password is incorrect."
+    }
+    
++ Response 400 (application/json)
+  + Body
+    Invalid request parameters
