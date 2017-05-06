@@ -53,7 +53,7 @@ Adds a new user to the client retention database for email service. The email ad
     Invalid request parameters
 
 ## Sign In User [/api/recruitunit/users/signin]
-Sign in using a users previously created credentials
+Sign in using a users previously created credentials. Returns a JWT token which is to be sent in subsequent requests for authentication. 
 
 ### Create [POST]
 
