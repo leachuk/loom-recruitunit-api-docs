@@ -9,7 +9,7 @@ Adds a new user to the client retention database for email service. The email ad
 
 + Parameters
 
-  + modelId: `server/services/recruitunit/users/recruitUnitUserService.controller.js` (required, string) - The id for the specific application
+  + modelId: `/services/recruitunit/users/recruitUnitUserService.controller.js` (required, string) - The id for the specific application
 
 + Request with body (application/json)
 
